@@ -1,7 +1,7 @@
 import { ethers, run } from "hardhat";
 
-const factory = '0xb06ab8c9D841685951c119D0684C20a7E37af8C9';
-const weth = '0x6e3B32f4b5353aEfA9784c95a8247a6C3D671bE1';
+const factory = '0x353AEecAB2B047e2Cae0BC0533f2beCDf52540e4';
+const weth = '0x2c2D1197D38adaf6D08A301d5cFeEBDd8c4389e6';
 
 async function main() {
 

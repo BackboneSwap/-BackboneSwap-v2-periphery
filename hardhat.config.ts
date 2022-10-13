@@ -21,24 +21,36 @@ const config: HardhatUserConfig = {
     ivarextestnet: {
       url: 'https://testnet.ivarex.com',
       chainId: 16888,
-      accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : []
+      accounts: process.env.PRIVATE_KEY_DEPLOY_MULTICALL ? [process.env.PRIVATE_KEY_DEPLOY_MULTICALL] : []
     },
     ivarex: {
       url: 'https://mainnet.ivarex.com',
       chainId: 88888,
-      accounts: process.env.PRIVATE_KEY_DEPLOY_IVAREX ? [process.env.PRIVATE_KEY_DEPLOY_IVAREX] : []
+      accounts: process.env.PRIVATE_KEY_DEPLOY_WETH ? [process.env.PRIVATE_KEY_DEPLOY_WETH] : []
     },
     bitkubtestnet: {
       url: 'https://rpc-testnet.bitkubchain.io',
       chainId: 25925,
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : []
     },
+    velastestnet: {
+      url: 'https://testnet.velas.com/rpc/',
+      chainId: 111,
+      accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : []
+    },
+    reitestnet: {
+      url: 'https://rei-testnet-rpc.moonrhythm.io',
+      chainId: 55556,
+      accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : []
+    }
   },
   etherscan: {
     apiKey: {
       ivarex: 'ivarex',
       ivarextestnet: ':D',
-      bitkubtestnet: 'bitkubtestnet'
+      bitkubtestnet: 'bitkubtestnet',
+      velastestnet: 'velastestnet',
+      reitestnet: 'reitestnet'
     },
     customChains: [
       {
@@ -63,6 +75,22 @@ const config: HardhatUserConfig = {
         urls: {
           apiURL: 'https://testnet.bkcscan.com/api',
           browserURL: 'https://testnet.bkcscan.com/'
+        }
+      },
+      {
+        network: 'velastestnet',
+        chainId: 111,
+        urls: {
+          apiURL: 'https://explorer.testnet.velas.com/api',
+          browserURL: 'https://evmexplorer.testnet.velas.com'
+        }
+      },
+      {
+        network: 'reitestnet',
+        chainId: 55556,
+        urls: {
+          apiURL: 'https://testnet.reiscan.com/api',
+          browserURL: 'https://testnet.reiscan.com'
         }
       },
     ]
